@@ -1,1 +1,0 @@
-An Android app that's dedicated to transforming your sleep schedule, tailoring its services to your specific day-to day routine!
