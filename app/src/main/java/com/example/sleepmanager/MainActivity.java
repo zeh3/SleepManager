@@ -19,5 +19,11 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, Settings.class);
             startActivity(intent);
         });
+
+        Button startSleeping = findViewById(R.id.startTiming);
+        startSleeping.setOnClickListener(unused -> {
+            Intent intent = new Intent(this, StartTiming.class);
+            startActivity(intent);
+        });
     }
 }
