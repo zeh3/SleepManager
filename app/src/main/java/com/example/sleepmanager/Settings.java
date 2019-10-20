@@ -21,6 +21,10 @@ public class Settings extends AppCompatActivity {
     /** the boolean that shows whether or not dynamic notifications are on. */
     private Switch dynamicNotifications;
 
+    private Switch goToBedSwitch;
+
+    private Switch putInDataSwitch;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,8 @@ public class Settings extends AppCompatActivity {
         darkMode = findViewById(R.id.darkModeSwitch);
         notifications = findViewById(R.id.notificationsSwitch);
         dynamicNotifications = findViewById(R.id.dynamicNotificationsSwitch);
+        goToBedSwitch = findViewById(R.id.goToBedSwitch);
+        putInDataSwitch = findViewById(R.id.lastNightDataSwitch);
 
         darkMode.setTextOff("Off");
         darkMode.setTextOn("On");
@@ -51,11 +57,26 @@ public class Settings extends AppCompatActivity {
             //notificationsOn = notifications.isChecked();
             if (notifications.isChecked()) {
                 dynamicNotificationsLayout.setVisibility(View.VISIBLE);
+                if (!goToBedSwitch.isChecked()) {
+                    dynamicNotifications.setVisibility(View.INVISIBLE);
+                }
             } else {
+
                 dynamicNotificationsLayout.setVisibility(View.INVISIBLE);
+
                 dynamicNotifications.setChecked(false);
+                goToBedSwitch.setChecked(false);
             }
         });
+
+        goToBedSwitch.setOnClickListener(unused -> {
+            if (goToBedSwitch.isChecked()) {
+                dynamicNotifications.setVisibility(View.VISIBLE);
+            } else {
+                dynamicNotifications.setVisibility(View.INVISIBLE);
+            }
+        });
+
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
