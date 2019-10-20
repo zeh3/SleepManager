@@ -1,0 +1,71 @@
+package com.example.sleepmanager;
+
+import android.os.Bundle;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.Switch;
+
+public class Settings extends AppCompatActivity {
+
+    /** the boolean that shows whether or not notifications are on. */
+    private Switch notifications;
+    /** the boolean that shows which mode the app is in (light or dark). */
+    private Switch darkMode;
+    /** the boolean that shows whether or not dynamic notifications are on. */
+    private Switch dynamicNotifications;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_settings);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        darkMode = findViewById(R.id.darkModeSwitch);
+        notifications = findViewById(R.id.notificationsSwitch);
+        dynamicNotifications = findViewById(R.id.dynamicNotificationsSwitch);
+
+        darkMode.setTextOff("Off");
+        darkMode.setTextOn("On");
+
+
+
+        LinearLayout notificationsLayout = findViewById(R.id.notificationsLayout);
+        notificationsLayout.setVisibility(View.VISIBLE);
+        LinearLayout modeLayout = findViewById(R.id.modeLayout);
+        modeLayout.setVisibility(View.VISIBLE);
+        LinearLayout dynamicNotificationsLayout = findViewById(R.id.dynamicNotificationsLayout);
+        dynamicNotificationsLayout.setVisibility(View.INVISIBLE);
+
+
+
+        notifications.setOnClickListener(unused -> {
+            //notificationsOn = notifications.isChecked();
+            if (notifications.isChecked()) {
+                dynamicNotificationsLayout.setVisibility(View.VISIBLE);
+            } else {
+                dynamicNotificationsLayout.setVisibility(View.INVISIBLE);
+                dynamicNotifications.setChecked(false);
+            }
+        });
+
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+    }
+
+}
