@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:text="Back" />
+
+    <Button
+        android:id="@+id/in3months"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="200dp"
+        android:text="3 Months" />
+
+    <Button
+        android:id="@+id/in1month"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="1 Month" />
+
+    <Button
+        android:id="@+id/in2weeks"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="2 Weeks" />
+
+    <Button
+        android:id="@+id/in1week"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="1 Week" />
+
+    <Button
+        android:id="@+id/in3days"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="3 Days" />
+
+
+
+</LinearLayout>

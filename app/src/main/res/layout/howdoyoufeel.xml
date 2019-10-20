@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/howDoYouFeel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:text="How Do You Feel?"
+        android:textAlignment="center"
+        android:textSize="40dp">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/howDoYouFeelRadio"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical"
+            android:textAlignment="center">
+
+
+            <RadioButton
+                android:id="@+id/excellent"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="60dp"
+                android:text="Excellent! I feel powerful." />
+
+            <RadioButton
+                android:id="@+id/good"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="60dp"
+                android:layout_marginTop="5dp"
+                android:text="I had a nice sleep." />
+
+            <RadioButton
+                android:id="@+id/normal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="60dp"
+                android:layout_marginTop="5dp"
+                android:text="I feel ok." />
+
+            <RadioButton
+                android:id="@+id/somewhatTired"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="60dp"
+                android:layout_marginTop="5dp"
+                android:text="Feeling tired. Don't wanna get up.:(" />
+
+            <RadioButton
+                android:id="@+id/bad"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="60dp"
+                android:layout_marginTop="5dp"
+                android:text="Didn't sleep well. Even more tired than last night." />
+
+        </RadioGroup>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="200dp"
+            android:text="Continue">
+
+        </Button>
+
+    </LinearLayout>
+
+
+</LinearLayout>
