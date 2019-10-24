@@ -24,16 +24,10 @@
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/home"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="graph" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="home" />
 
         </com.google.android.material.appbar.AppBarLayout>
 

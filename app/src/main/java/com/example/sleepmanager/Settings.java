@@ -1,5 +1,6 @@
 package com.example.sleepmanager;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 
@@ -75,6 +77,12 @@ public class Settings extends AppCompatActivity {
             } else {
                 dynamicNotifications.setVisibility(View.INVISIBLE);
             }
+        });
+
+        Button home = findViewById(R.id.home);
+        home.setOnClickListener(unused -> {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         });
 
 
