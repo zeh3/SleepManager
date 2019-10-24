@@ -12,11 +12,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         //Test
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.mainmenu);
 
-        Button settings = findViewById(R.id.settingsButton);
+        Button settings = findViewById(R.id.otherSettings);
         settings.setOnClickListener(unused -> {
             Intent intent = new Intent(this, Settings.class);
+            startActivity(intent);
+        });
+
+        Button startSleeping = findViewById(R.id.startTiming);
+        startSleeping.setOnClickListener(unused -> {
+            Intent intent = new Intent(this, StartTiming.class);
             startActivity(intent);
         });
     }
