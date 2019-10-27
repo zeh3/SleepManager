@@ -25,5 +25,12 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, StartTiming.class);
             startActivity(intent);
         });
+
+        Button graph = findViewById(R.id.graph);
+        graph.setOnClickListener(unused -> {
+            Intent intent = new Intent(this, graph.class);
+            startActivity(intent);
+        });
     }
+
 }
