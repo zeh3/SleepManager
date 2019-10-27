@@ -76,6 +76,7 @@ public class Settings extends AppCompatActivity {
                 dynamicNotifications.setVisibility(View.VISIBLE);
             } else {
                 dynamicNotifications.setVisibility(View.INVISIBLE);
+                dynamicNotifications.setChecked(false);
             }
         });
 
