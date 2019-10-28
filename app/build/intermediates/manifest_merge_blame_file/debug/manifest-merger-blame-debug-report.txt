@@ -6,50 +6,82 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="27"
-8-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml
+8-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml
+9-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml
 10
-11    <application
-11-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:5:5-23:19
-12        android:allowBackup="true"
-12-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:6:9-35
-13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.0.1] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/46da25c3e2ae6308b2227b660caa604d/core-1.0.1/AndroidManifest.xml:22:18-86
-14        android:debuggable="true"
-15        android:icon="@mipmap/ic_launcher"
-15-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:7:9-43
-16        android:label="@string/app_name"
-16-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:8:9-41
-17        android:roundIcon="@mipmap/ic_launcher_round"
-17-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:9:9-54
-18        android:supportsRtl="true"
-18-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:10:9-35
-19        android:testOnly="true"
-20        android:theme="@style/AppTheme" >
-20-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:11:9-40
-21        <activity
-21-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:12:9-15:68
-22            android:name="com.example.sleepmanager.Settings"
-22-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:13:13-37
-23            android:label="@string/title_activity_settings"
-23-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:14:13-60
-24            android:theme="@style/AppTheme.NoActionBar" />
-24-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:15:13-56
-25        <activity android:name="com.example.sleepmanager.MainActivity" >
-25-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:16:9-22:20
-25-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:16:19-47
-26            <intent-filter>
-26-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:17:13-21:29
-27                <action android:name="android.intent.action.MAIN" />
-27-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:18:17-69
-27-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:18:25-66
-28
-29                <category android:name="android.intent.category.LAUNCHER" />
-29-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:20:17-77
-29-->/Users/susanzeh/Projects/sleep-manager2/app/src/main/AndroidManifest.xml:20:27-74
-30            </intent-filter>
-31        </activity>
-32    </application>
-33
-34</manifest>
+11    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+11-->[com.google.firebase:firebase-database:16.0.4] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/19c736340f9f9bb7b84174b2f5df41d3/jetified-firebase-database-16.0.4/AndroidManifest.xml:22:5-79
+11-->[com.google.firebase:firebase-database:16.0.4] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/19c736340f9f9bb7b84174b2f5df41d3/jetified-firebase-database-16.0.4/AndroidManifest.xml:22:22-76
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->[com.google.firebase:firebase-database:16.0.4] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/19c736340f9f9bb7b84174b2f5df41d3/jetified-firebase-database-16.0.4/AndroidManifest.xml:23:5-67
+12-->[com.google.firebase:firebase-database:16.0.4] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/19c736340f9f9bb7b84174b2f5df41d3/jetified-firebase-database-16.0.4/AndroidManifest.xml:23:22-64
+13
+14    <application
+14-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:5:5-23:19
+15        android:allowBackup="true"
+15-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:6:9-35
+16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+16-->[androidx.core:core:1.0.1] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/7af9464903b8a503017df0a97e0258a2/core-1.0.1/AndroidManifest.xml:22:18-86
+17        android:debuggable="true"
+18        android:icon="@mipmap/ic_launcher"
+18-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:7:9-43
+19        android:label="@string/app_name"
+19-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:8:9-41
+20        android:roundIcon="@mipmap/ic_launcher_round"
+20-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:9:9-54
+21        android:supportsRtl="true"
+21-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:10:9-35
+22        android:theme="@style/AppTheme" >
+22-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:11:9-40
+23        <activity
+23-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:12:9-15:68
+24            android:name="com.example.sleepmanager.Settings"
+24-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:13:13-37
+25            android:label="@string/title_activity_settings"
+25-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:14:13-60
+26            android:theme="@style/AppTheme.NoActionBar" />
+26-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:15:13-56
+27        <activity android:name="com.example.sleepmanager.MainActivity" >
+27-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:16:9-22:20
+27-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:16:19-47
+28            <intent-filter>
+28-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:17:13-21:29
+29                <action android:name="android.intent.action.MAIN" />
+29-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:18:17-69
+29-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:18:25-66
+30
+31                <category android:name="android.intent.category.LAUNCHER" />
+31-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:20:17-77
+31-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:20:27-74
+32            </intent-filter>
+33        </activity>
+34        <activity
+34-->[com.google.android.gms:play-services-base:16.0.1] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/818798c645a5eaf45c242456b22187c6/jetified-play-services-base-16.0.1/AndroidManifest.xml:23:9-26:75
+35            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+35-->[com.google.android.gms:play-services-base:16.0.1] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/818798c645a5eaf45c242456b22187c6/jetified-play-services-base-16.0.1/AndroidManifest.xml:24:13-79
+36            android:exported="false"
+36-->[com.google.android.gms:play-services-base:16.0.1] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/818798c645a5eaf45c242456b22187c6/jetified-play-services-base-16.0.1/AndroidManifest.xml:25:13-37
+37            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+37-->[com.google.android.gms:play-services-base:16.0.1] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/818798c645a5eaf45c242456b22187c6/jetified-play-services-base-16.0.1/AndroidManifest.xml:26:13-72
+38
+39        <provider
+39-->[com.google.firebase:firebase-common:16.0.3] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/248489329bd1b475ee9fd369c71a4708/jetified-firebase-common-16.0.3/AndroidManifest.xml:10:9-14:39
+40            android:name="com.google.firebase.provider.FirebaseInitProvider"
+40-->[com.google.firebase:firebase-common:16.0.3] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/248489329bd1b475ee9fd369c71a4708/jetified-firebase-common-16.0.3/AndroidManifest.xml:11:13-77
+41            android:authorities="com.example.sleepmanager.firebaseinitprovider"
+41-->[com.google.firebase:firebase-common:16.0.3] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/248489329bd1b475ee9fd369c71a4708/jetified-firebase-common-16.0.3/AndroidManifest.xml:12:13-72
+42            android:exported="false"
+42-->[com.google.firebase:firebase-common:16.0.3] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/248489329bd1b475ee9fd369c71a4708/jetified-firebase-common-16.0.3/AndroidManifest.xml:13:13-37
+43            android:initOrder="100" />
+43-->[com.google.firebase:firebase-common:16.0.3] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/248489329bd1b475ee9fd369c71a4708/jetified-firebase-common-16.0.3/AndroidManifest.xml:14:13-36
+44
+45        <meta-data
+45-->[com.google.android.gms:play-services-basement:16.0.1] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/1a91e256a06e6e336e20947af87c5194/jetified-play-services-basement-16.0.1/AndroidManifest.xml:23:9-25:69
+46            android:name="com.google.android.gms.version"
+46-->[com.google.android.gms:play-services-basement:16.0.1] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/1a91e256a06e6e336e20947af87c5194/jetified-play-services-basement-16.0.1/AndroidManifest.xml:24:13-58
+47            android:value="@integer/google_play_services_version" />
+47-->[com.google.android.gms:play-services-basement:16.0.1] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/1a91e256a06e6e336e20947af87c5194/jetified-play-services-basement-16.0.1/AndroidManifest.xml:25:13-66
+48    </application>
+49
+50</manifest>
