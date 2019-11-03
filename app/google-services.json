@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "580836082415",
+    "firebase_url": "https://sleep-manager-5e205.firebaseio.com",
+    "project_id": "sleep-manager-5e205",
+    "storage_bucket": "sleep-manager-5e205.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580836082415:android:ccb8a6ca57270bc7f5511a",
+        "android_client_info": {
+          "package_name": "com.example.sleepmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "580836082415-s5l4qfb93ca0ln3rpgdh2m1pikg2gur5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sleepmanager",
+            "certificate_hash": "7e898e7cfbb4ea419e1366c90e5816035e9a8bb9"
+          }
+        },
+        {
+          "client_id": "580836082415-g24civu1kq3ju3l1j1efb07lfpd53nj8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH8ZiICbS_xFxCsm3o6Jak-zEEwJM994I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "580836082415-g24civu1kq3ju3l1j1efb07lfpd53nj8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
