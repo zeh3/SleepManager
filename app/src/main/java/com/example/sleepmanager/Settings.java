@@ -21,11 +21,11 @@ import android.widget.Switch;
 
 public class Settings extends AppCompatActivity {
 
-    /** the boolean that shows whether or not notifications are on. */
+    /** the Switch that shows whether or not notifications are on. */
     private Switch notifications;
-    /** the boolean that shows which mode the app is in (light or dark). */
+    /** the Switch that shows which mode the app is in (light or dark). */
     private Switch darkMode;
-    /** the boolean that shows whether or not dynamic notifications are on. */
+    /** the Switch that shows whether or not dynamic notifications are on. */
     private Switch dynamicNotifications;
 
     private Switch goToBedSwitch;
