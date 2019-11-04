@@ -60,7 +60,7 @@ public class inputpage extends MainActivity{
         return sleep2;
     }
     public Date format2(String a) {
-        DateFormat format = new SimpleDateFormat("dd/mm/yyyy hh:mm");
+        DateFormat format = new SimpleDateFormat("dd/mm/yyyy hh:mm a");
         Date sleep2 = new Date();
         try {
             sleep2 = format.parse(a);
