@@ -3,15 +3,10 @@ package com.example.sleepmanager;
 import android.content.Intent;
 import android.os.Bundle;
 
-/*
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-*/
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
@@ -31,8 +26,6 @@ public class Settings extends AppCompatActivity {
     private Switch goToBedSwitch;
 
     private Switch putInDataSwitch;
-
-    //private DatabaseReference mDatabase;
 
 
     @Override
@@ -59,8 +52,6 @@ public class Settings extends AppCompatActivity {
         modeLayout.setVisibility(View.VISIBLE);
         LinearLayout dynamicNotificationsLayout = findViewById(R.id.dynamicNotificationsLayout);
         dynamicNotificationsLayout.setVisibility(View.INVISIBLE);
-
-        //mDatabase = FirebaseDatabase.getInstance().getReference();
 
 
 
@@ -95,14 +86,6 @@ public class Settings extends AppCompatActivity {
             startActivity(intent);
         });
 
-        darkMode.setOnClickListener(unused -> {
-            if(darkMode.isChecked()) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            }
-        });
-
 
 
         /*FloatingActionButton fab = findViewById(R.id.fab);
@@ -114,10 +97,5 @@ public class Settings extends AppCompatActivity {
             }
         });*/
     }
-
-    /*private void setSettings(boolean darkMode, boolean goToBed, boolean goToBedEarlier,
-                             boolean notifications, boolean putInLastNight) {
-        mDatabase.child("users").child("user").child("settings").child("settings").child("darkMode").setValue(darkMode);
-    }*/
 
 }
