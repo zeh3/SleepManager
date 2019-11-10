@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.google.firebase.database.DatabaseReference;
 
 public class inputpage extends MainActivity{
     public void onCreate() {
@@ -36,13 +37,13 @@ public class inputpage extends MainActivity{
         DatabaseReference b = a.child("sleepWakes");
         UsersData sleepdata = new UsersData(slept, today, sleep, wakeup);
         users.put(id, sleepdata);
-        b.setValueAsync(users);
+        b.setValue(users);
     }
     public class UsersData {
-        public double slept;
-        public Date today;
-        public Date sleep;
-        public Date wakeup;
+        private double slept;
+        private Date today;
+        private Date sleep;
+        private Date wakeup;
         UsersData(double a, Date b, Date c, Date d) {
             slept = a;
             today = b;

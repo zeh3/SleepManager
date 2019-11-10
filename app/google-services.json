@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "580836082415-t9u74gfrk5qeif8p1aap6df7mt69bdul.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sleepmanager",
+            "certificate_hash": "44d86b32afceeca213a5a3034d53bd899bb6c150"
+          }
+        },
+        {
           "client_id": "580836082415-s5l4qfb93ca0ln3rpgdh2m1pikg2gur5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
