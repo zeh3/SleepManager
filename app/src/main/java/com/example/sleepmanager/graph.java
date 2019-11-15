@@ -2,6 +2,7 @@ package com.example.sleepmanager;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -9,15 +10,23 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import java.util.ArrayList;
+import java.util.Date;
+
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-public class graph extends MainActivity {
+public class graph extends AppCompatActivity {
     BarChart b;
     protected void onCreate(final JsonObject c) {
         setContentView(R.layout.graph);
+        double[] hours;
+        Date[] today;
+        DatabaseReference firebaseDatabase = FirebaseDatabase.getInstance().getReference();
+
         b = b.findViewById(R.id.bar);
         ConstraintLayout m = findViewById(R.id.ab);
         Button n = m.findViewById(R.id.bot);

@@ -1,42 +1,77 @@
 package com.example.sleepmanager;
 
+import android.content.Intent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class inputpage extends MainActivity{
+public class inputpage extends AppCompatActivity{
+    private String id;
     public void onCreate() {
+        initial();
+        Intent intent = getIntent();
+        id = intent.getStringExtra("user");
         setContentView(R.layout.inputpage);
-        EditText sleep = findViewById(R.id.sleep);
-        EditText wakeup = findViewById(R.id.wakeup);
-        EditText date = findViewById(R.id.date);
-        String sleep1 = sleep.getText().toString();
-        String wakeup1 = wakeup.getText().toString();
-        String date1 = date.getText().toString();
-        Date sleep2 = format2(sleep1);
-        Date wakeup2 = format2(wakeup1);
-        Date date2 = format1(date1);
-        long sleep3 = sleep2.getTime();
-        long wakeup3 = wakeup2.getTime();
-        long slept = wakeup3 - sleep3;
-        double hrs_slept = slept/(60*60);
-        input(hrs_slept, date2, sleep2, wakeup2);
+        Button saveData = findViewById(R.id.saveData);
+        saveData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    EditText sleep = findViewById(R.id.sleep);
+                    EditText wakeup = findViewById(R.id.wakeup);
+                    EditText datesleep = findViewById(R.id.date1);
+                    EditText datewakeup = findViewById(R.id.date2);
+                    String sleep1 = sleep.getText().toString();
+                    String wakeup1 = wakeup.getText().toString();
+                    String datesleep1 = datesleep.getText().toString();
+                    String datewakeup1 = datewakeup.getText().toString();
+                    Date sleep2 = format2(sleep1);
+                    Date wakeup2 = format2(wakeup1);
+                    Date datewakeup2 = format1(datewakeup1);
+                    Date sleepfinal = format3(sleep1.concat(" " + datesleep1));
+                    Date wakeupfinal = format3(wakeup1.concat(" " + datewakeup1));
+                    long sleep3 = sleepfinal.getTime();
+                    long wakeup3 = wakeupfinal.getTime();
+                    long slept = wakeup3 - sleep3;
+                    double hrs_slept = slept/(60*60);
+                    input(hrs_slept, datewakeup2, sleep2, wakeup2);
+                } catch (Exception q) {
+                }
+            }
+        });
     }
+    private List<UsersData> usersdata = new ArrayList<>();
+    private UsersData usersData1 = new UsersData();
+    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("users");
     public void input( double slept, Date today, Date sleep, Date wakeup) {
         // to put the data in the firebase
-        Map<String, UsersData> users = new HashMap<>();
-        DatabaseReference a = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference b = a.child("sleepWakes");
-        UsersData sleepdata = new UsersData(slept, today, sleep, wakeup);
-        users.put(id, sleepdata);
-        b.setValueAsync(users);
+
+        DatabaseReference b = databaseReference.child(id).child("sleepWakes");
+        usersData1.setToday(today);
+        usersData1.setWakeup(wakeup);
+        usersData1.setSleep(sleep);
+        usersData1.setSlept(slept);
+        usersdata.add(usersData1);
+        b.push().setValue(usersData1, new DatabaseReference.CompletionListener() {
+            @Override
+            public void onComplete(DatabaseError error, DatabaseReference ref) {
+
+            }
+        });
     }
     public class UsersData {
         public double slept;
@@ -49,6 +84,33 @@ public class inputpage extends MainActivity{
             sleep = c;
             wakeup = d;
         }
+        UsersData() {
+
+        }
+        public Date getSleep() {
+            return sleep;
+        }
+        public Date getToday() {
+            return today;
+        }
+        public double getSlept() {
+            return slept;
+        }
+        public Date getWakeup() {
+            return wakeup;
+        }
+        public void setSleep(Date sleep) {
+            this.sleep = sleep;
+        }
+        public void setSlept(double slept) {
+            this.slept = slept;
+        }
+        public void setToday(Date today) {
+            this.today = today;
+        }
+        public void setWakeup(Date wakeup) {
+            this.wakeup = wakeup;
+        }
     }
     public Date format1(String a) {
         DateFormat format = new SimpleDateFormat("dd/mm/yyyy");
@@ -60,6 +122,15 @@ public class inputpage extends MainActivity{
         return sleep2;
     }
     public Date format2(String a) {
+        DateFormat format = new SimpleDateFormat("hh:mm a");
+        Date sleep2 = new Date();
+        try {
+            sleep2 = format.parse(a);
+        } catch (Exception z){
+        }
+        return sleep2;
+    }
+    public Date format3(String a) {
         DateFormat format = new SimpleDateFormat("dd/mm/yyyy hh:mm a");
         Date sleep2 = new Date();
         try {
@@ -93,11 +164,5 @@ public class inputpage extends MainActivity{
             Date sleep1 = sleep.get(i);
             input(slept1, today1, sleep1, wakeup1);
         }
-    }
-    private String id;
-    public void main(String a) {
-        initial();
-        id = a;
-        onCreate();
     }
 }
