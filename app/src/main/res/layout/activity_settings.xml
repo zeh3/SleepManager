@@ -102,6 +102,18 @@
                         android:clickable="true"
                         android:text="to go to bed earlier each night" />
 
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5" />
+
+                    <Spinner
+                        android:id="@+id/spinner2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5" />
+
                 </LinearLayout>
 
             </LinearLayout>

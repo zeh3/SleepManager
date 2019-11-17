@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button settings = findViewById(R.id.otherSettings);
         settings.setOnClickListener(unused -> {
-            Intent intent = new Intent(this, Settings.class);
+            Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
         });
 
