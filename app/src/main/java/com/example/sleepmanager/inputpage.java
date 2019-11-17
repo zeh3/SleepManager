@@ -60,7 +60,7 @@ public class inputpage extends AppCompatActivity{
     public void input( double slept, Date today, Date sleep, Date wakeup) {
         // to put the data in the firebase
 
-        DatabaseReference b = databaseReference.child(id).child("sleepWakes");
+        DatabaseReference b = databaseReference.child(id).child("usersData");
         usersData1.setToday(today);
         usersData1.setWakeup(wakeup);
         usersData1.setSleep(sleep);
