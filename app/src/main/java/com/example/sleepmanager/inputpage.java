@@ -7,11 +7,9 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -20,6 +18,7 @@ import java.util.Date;
 import java.util.List;
 
 public class inputpage extends AppCompatActivity{
+
     private String id;
     public void onCreate() {
         initial();
@@ -73,45 +72,7 @@ public class inputpage extends AppCompatActivity{
             }
         });
     }
-    public class UsersData {
-        public double slept;
-        public Date today;
-        public Date sleep;
-        public Date wakeup;
-        UsersData(double a, Date b, Date c, Date d) {
-            slept = a;
-            today = b;
-            sleep = c;
-            wakeup = d;
-        }
-        UsersData() {
 
-        }
-        public Date getSleep() {
-            return sleep;
-        }
-        public Date getToday() {
-            return today;
-        }
-        public double getSlept() {
-            return slept;
-        }
-        public Date getWakeup() {
-            return wakeup;
-        }
-        public void setSleep(Date sleep) {
-            this.sleep = sleep;
-        }
-        public void setSlept(double slept) {
-            this.slept = slept;
-        }
-        public void setToday(Date today) {
-            this.today = today;
-        }
-        public void setWakeup(Date wakeup) {
-            this.wakeup = wakeup;
-        }
-    }
     public Date format1(String a) {
         DateFormat format = new SimpleDateFormat("dd/mm/yyyy");
         Date sleep2 = new Date();
@@ -166,3 +127,4 @@ public class inputpage extends AppCompatActivity{
         }
     }
 }
+

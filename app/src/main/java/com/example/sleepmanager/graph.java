@@ -27,6 +27,7 @@ public class graph extends AppCompatActivity {
         Date[] today;
         DatabaseReference firebaseDatabase = FirebaseDatabase.getInstance().getReference();
 
+        
         b = b.findViewById(R.id.bar);
         ConstraintLayout m = findViewById(R.id.ab);
         Button n = m.findViewById(R.id.bot);
@@ -119,8 +120,5 @@ public class graph extends AppCompatActivity {
         BarDataSet l =new BarDataSet(i,"Dates");
         BarData k = new BarData((IBarDataSet) j,l);
         b.setData(k);
-    }
-    protected void main(JsonObject a) {
-        onCreate(a);
     }
 }
