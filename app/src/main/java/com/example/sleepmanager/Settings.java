@@ -59,4 +59,16 @@ public class Settings {
     public boolean getPutInDataNotifications() {
         return putInDataNotifications;
     }
+    public String toString() {
+        String r = "";
+        r += "\nadjustEveryXDays: " + adjustEveryXDays;
+        r += "\ndarkMode: " + darkMode;
+        r += "\ndynamicNotifications: " + dynamicNotifications;
+        r += "\ngoToBedNotifications: " + goToBedNotifications;
+        r += "\nminutesEarlier: " + minutesEarlier;
+        r += "\nnotifications: " + notifications;
+        r += "\nputInDataNotifications: " + putInDataNotifications;
+
+        return r;
+    }
 }

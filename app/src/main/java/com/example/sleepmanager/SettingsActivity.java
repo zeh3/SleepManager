@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -61,12 +62,16 @@ public class SettingsActivity extends AppCompatActivity {
 
         user = "default";
 
+
+
+
+
         //darkMode.setTextOff("Off");
         //darkMode.setTextOn("On");
 
         //darkMode.setChecked(mDatabase.child("users").child(user).child("darkMode"));
 
-
+        //darkMode.setChecked(true);
 
         LinearLayout notificationsLayout = findViewById(R.id.notificationsLayout);
         notificationsLayout.setVisibility(View.VISIBLE);
@@ -76,16 +81,40 @@ public class SettingsActivity extends AppCompatActivity {
         dynamicNotificationsLayout.setVisibility(View.INVISIBLE);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference justSettings = mDatabase.child("users").child(user).child("settings");
+
+        ValueEventListener settingsListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                settings = dataSnapshot.getValue(Settings.class);
+                switchSwitches();
+                Log.d("tag2", "listening");
+
+                if (settings == null) {
+                    settings = new Settings();
+                    mDatabase.child("users").child(user).child("settings").setValue(settings);
+                }
+
+                //turn switches on/off accordingly
+                //witchSwitches();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+
+        justSettings.addValueEventListener(settingsListener);
+
+        //ValueEventListener firstListener =
 
         //get settings object
+        //String set = mDatabase.child("users").child(user).child("settings").toString();
+        //System.out.println(set);
+        //Log.d("tag", set);
         //if settings == null then initialize to default values and push to database
-        if (settings == null) {
-            settings = new Settings();
-            mDatabase.child("users").child(user).child("settings").setValue(settings);
-        }
 
-        //turn switches on/off accordingly
-        switchSwitches();
 
         Button home = findViewById(R.id.home);
         home.setOnClickListener(unused -> {
@@ -184,22 +213,9 @@ public class SettingsActivity extends AppCompatActivity {
 
         });
 
-        DatabaseReference justSettings = mDatabase.child("users").child(user).child("settings");
 
-        ValueEventListener settingsListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                settings = dataSnapshot.getValue(Settings.class);
-                switchSwitches();
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            }
-        };
-
-        justSettings.addValueEventListener(settingsListener);
 
         /*FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -216,6 +232,8 @@ public class SettingsActivity extends AppCompatActivity {
         mDatabase.child("users").child("user").child("settings").child("settings").child("darkMode").setValue(darkMode);
     }*/
     private void switchSwitches() {
+        Log.d("tag2", "switching");
+        Log.d("tag2", settings.toString());
         darkMode.setChecked(settings.getDarkMode());
         dynamicNotifications.setChecked(settings.getDynamicNotifications());
         goToBedSwitch.setChecked(settings.getGoToBedNotifications());
