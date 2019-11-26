@@ -58,7 +58,7 @@ public class inputpage extends AppCompatActivity{
     private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("users");
     public void input( double slept, Date today, Date sleep, Date wakeup) {
         // to put the data in the firebase
-
+        usersData1 = new UsersData();
         DatabaseReference b = databaseReference.child(id).child("usersData");
         usersData1.setToday(today);
         usersData1.setWakeup(wakeup);
