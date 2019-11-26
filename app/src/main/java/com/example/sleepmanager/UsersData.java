@@ -28,17 +28,17 @@ public class UsersData extends Users{
     public Date getWakeup() {
         return wakeup;
     }
-    public void setSleep(Date sleep) {
-        this.sleep = sleep;
+    public void setSleep(Date slee) {
+        this.sleep = slee;
     }
-    public void setSlept(double slept) {
-        this.slept = slept;
+    public void setSlept(double slep) {
+        this.slept = slep;
     }
-    public void setToday(Date today) {
-        this.today = today;
+    public void setToday(Date toda) {
+        this.today = toda;
     }
-    public void setWakeup(Date wakeup) {
-        this.wakeup = wakeup;
+    public void setWakeup(Date wakeu) {
+        this.wakeup = wakeu;
     }
 }
 
