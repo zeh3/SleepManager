@@ -1,10 +1,9 @@
 package com.example.sleepmanager;
 import android.content.Intent;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -20,8 +19,6 @@ import java.util.Date;
 import java.util.List;
 
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,7 +32,7 @@ public class graph extends AppCompatActivity {
     private String id;
     private void getData() {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference();
+        DatabaseReference databaseReference = firebaseDatabase.getReference().child(id).child("usersData");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {

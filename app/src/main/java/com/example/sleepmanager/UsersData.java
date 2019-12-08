@@ -2,7 +2,7 @@ package com.example.sleepmanager;
 
 import java.util.Date;
 
-public class UsersData extends Users{
+public class UsersData {
     public double slept;
     public Date today;
     public Date sleep;
