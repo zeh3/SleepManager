@@ -72,7 +72,6 @@ public class inputpage extends AppCompatActivity{
             }
         });
     }
-
     public Date format1(String a) {
         DateFormat format = new SimpleDateFormat("dd/mm/yyyy");
         Date sleep2 = new Date();
@@ -127,4 +126,3 @@ public class inputpage extends AppCompatActivity{
         }
     }
 }
-
