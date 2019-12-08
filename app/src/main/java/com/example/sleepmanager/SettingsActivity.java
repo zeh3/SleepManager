@@ -18,6 +18,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 
@@ -46,6 +47,16 @@ public class SettingsActivity extends AppCompatActivity {
 
     private Settings settings;
 
+    LinearLayout notificationsLayout;
+
+    LinearLayout modeLayout;
+
+    LinearLayout dynamicNotificationsLayout;
+
+    EditText adjustEveryXDays;
+
+    EditText minutesEarlier;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +70,9 @@ public class SettingsActivity extends AppCompatActivity {
         dynamicNotifications = findViewById(R.id.dynamicNotificationsSwitch);
         goToBedSwitch = findViewById(R.id.goToBedSwitch);
         putInDataSwitch = findViewById(R.id.lastNightDataSwitch);
+        adjustEveryXDays = findViewById(R.id.adjustEveryXDays);
+        minutesEarlier = findViewById(R.id.minutesEarlier);
+
 
         user = "default";
 
@@ -73,11 +87,11 @@ public class SettingsActivity extends AppCompatActivity {
 
         //darkMode.setChecked(true);
 
-        LinearLayout notificationsLayout = findViewById(R.id.notificationsLayout);
+        notificationsLayout = findViewById(R.id.notificationsLayout);
         notificationsLayout.setVisibility(View.VISIBLE);
-        LinearLayout modeLayout = findViewById(R.id.modeLayout);
+        modeLayout = findViewById(R.id.modeLayout);
         modeLayout.setVisibility(View.VISIBLE);
-        LinearLayout dynamicNotificationsLayout = findViewById(R.id.dynamicNotificationsLayout);
+        dynamicNotificationsLayout = findViewById(R.id.dynamicNotificationsLayout);
         dynamicNotificationsLayout.setVisibility(View.INVISIBLE);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -200,31 +214,33 @@ public class SettingsActivity extends AppCompatActivity {
 
         dynamicNotifications.setOnClickListener(unused -> {
             if (dynamicNotifications.isChecked()) {
-                settings.setDynamicNotifications(true);
+                adjustEveryXDays.setVisibility(View.VISIBLE);
 
+                settings.setDynamicNotifications(true);
                 mDatabase.child("users").child(user).child("settings").setValue(settings);
                 //mDatabase.child("users").child(user).child("settings").child("dynamicNotifications").setValue(true);
             } else {
-                settings.setDynamicNotifications(false);
+                adjustEveryXDays.setVisibility(View.INVISIBLE);
 
+                settings.setDynamicNotifications(false);
                 mDatabase.child("users").child(user).child("settings").setValue(settings);
                 //mDatabase.child("users").child(user).child("settings").child("dynamicNotifications").setValue(false);
             }
 
         });
 
+        minutesEarlier.setOnClickListener(unused -> {
+            int set = Integer.parseInt(minutesEarlier.getText().toString());
+            settings.setMinutesEarlier(set);
+            mDatabase.child("users").child(user).child("settings").setValue(settings);
+        });
 
+        adjustEveryXDays.setOnClickListener(unused -> {
+            int set = Integer.parseInt(adjustEveryXDays.getText().toString());
+            settings.setAdjustEveryXDays(set);
+            mDatabase.child("users").child(user).child("settings").setValue(settings);
+        });
 
-
-
-        /*FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
     }
 
     /*private void setSettings(boolean darkMode, boolean goToBed, boolean goToBedEarlier,
@@ -239,6 +255,22 @@ public class SettingsActivity extends AppCompatActivity {
         goToBedSwitch.setChecked(settings.getGoToBedNotifications());
         notifications.setChecked(settings.getNotifications());
         putInDataSwitch.setChecked(settings.getPutInDataNotifications());
+        adjustEveryXDays.setText("" + settings.getAdjustEveryXDays());
+        minutesEarlier.setText("" + settings.getMinutesEarlier());
+
+        if (notifications.isChecked()) {
+            dynamicNotificationsLayout.setVisibility(View.VISIBLE);
+        } else {
+            dynamicNotificationsLayout.setVisibility(View.INVISIBLE);
+        }
+
+        if (dynamicNotifications.isChecked()) {
+            adjustEveryXDays.setVisibility(View.VISIBLE);
+            minutesEarlier.setVisibility(View.VISIBLE);
+        } else {
+            adjustEveryXDays.setVisibility(View.INVISIBLE);
+            minutesEarlier.setVisibility(View.INVISIBLE);
+        }
     }
 
 }
