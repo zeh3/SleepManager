@@ -6,32 +6,32 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="27"
-8-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml
+8-->C:\Users\user\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml
+9-->C:\Users\user\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml
 10
 11    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 12    <!-- <uses-sdk android:minSdkVersion="14"/> -->
 13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-13-->[com.google.firebase:firebase-database:19.2.0] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/9209bec148561620729e9a8f50f40b76/firebase-database-19.2.0/AndroidManifest.xml:25:5-79
-13-->[com.google.firebase:firebase-database:19.2.0] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/9209bec148561620729e9a8f50f40b76/firebase-database-19.2.0/AndroidManifest.xml:25:22-76
+13-->[com.google.firebase:firebase-database:19.2.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\9209bec148561620729e9a8f50f40b76\firebase-database-19.2.0\AndroidManifest.xml:25:5-79
+13-->[com.google.firebase:firebase-database:19.2.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\9209bec148561620729e9a8f50f40b76\firebase-database-19.2.0\AndroidManifest.xml:25:22-76
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->[com.google.firebase:firebase-database:19.2.0] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/9209bec148561620729e9a8f50f40b76/firebase-database-19.2.0/AndroidManifest.xml:26:5-67
-14-->[com.google.firebase:firebase-database:19.2.0] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/9209bec148561620729e9a8f50f40b76/firebase-database-19.2.0/AndroidManifest.xml:26:22-64
+14-->[com.google.firebase:firebase-database:19.2.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\9209bec148561620729e9a8f50f40b76\firebase-database-19.2.0\AndroidManifest.xml:26:5-67
+14-->[com.google.firebase:firebase-database:19.2.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\9209bec148561620729e9a8f50f40b76\firebase-database-19.2.0\AndroidManifest.xml:26:22-64
 15
 16    <application
-16-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:5:5-23:19
+16-->C:\Users\user\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:5:5-23:19
 17        android:allowBackup="true"
-17-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:6:9-35
+17-->C:\Users\user\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:6:9-35
 18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-18-->[androidx.core:core:1.0.1] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/7af9464903b8a503017df0a97e0258a2/core-1.0.1/AndroidManifest.xml:22:18-86
+18-->[androidx.core:core:1.0.1] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7af9464903b8a503017df0a97e0258a2\core-1.0.1\AndroidManifest.xml:22:18-86
 19        android:debuggable="true"
 20        android:icon="@mipmap/ic_launcher"
-20-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:7:9-43
+20-->C:\Users\user\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:7:9-43
 21        android:label="@string/app_name"
-21-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:8:9-41
+21-->C:\Users\user\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:8:9-41
 22        android:roundIcon="@mipmap/ic_launcher_round"
-22-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:9:9-54
+22-->C:\Users\user\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:9:9-54
 23        android:supportsRtl="true"
 23-->/Users/susanzeh/Projects/sleep-manager3/app/src/main/AndroidManifest.xml:10:9-35
 24        android:testOnly="true"
