@@ -103,6 +103,7 @@
                         android:text="to go to bed earlier each night" />
 
                     <LinearLayout
+                        android:id="@+id/xDaysLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="5"
@@ -133,6 +134,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/minutesEarlierLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="5"

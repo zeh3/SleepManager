@@ -57,6 +57,10 @@ public class SettingsActivity extends AppCompatActivity {
 
     EditText minutesEarlier;
 
+    LinearLayout xDaysLayout;
+
+    LinearLayout minutesEarlierLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +76,8 @@ public class SettingsActivity extends AppCompatActivity {
         putInDataSwitch = findViewById(R.id.lastNightDataSwitch);
         adjustEveryXDays = findViewById(R.id.adjustEveryXDays);
         minutesEarlier = findViewById(R.id.minutesEarlier);
+        xDaysLayout = findViewById(R.id.xDaysLayout);
+        minutesEarlierLayout = findViewById(R.id.minutesEarlierLayout);
 
 
         user = "default";
@@ -265,11 +271,23 @@ public class SettingsActivity extends AppCompatActivity {
         }
 
         if (dynamicNotifications.isChecked()) {
-            adjustEveryXDays.setVisibility(View.VISIBLE);
-            minutesEarlier.setVisibility(View.VISIBLE);
+            //adjustEveryXDays.setVisibility(View.VISIBLE);
+            //minutesEarlier.setVisibility(View.VISIBLE);
+
+            minutesEarlierLayout.setVisibility(View.VISIBLE);
+            xDaysLayout.setVisibility(View.VISIBLE);
         } else {
-            adjustEveryXDays.setVisibility(View.INVISIBLE);
-            minutesEarlier.setVisibility(View.INVISIBLE);
+            //adjustEveryXDays.setVisibility(View.INVISIBLE);
+            //minutesEarlier.setVisibility(View.INVISIBLE);
+
+            minutesEarlierLayout.setVisibility(View.INVISIBLE);
+            xDaysLayout.setVisibility(View.INVISIBLE);
+        }
+
+        if (goToBedSwitch.isChecked()) {
+            dynamicNotifications.setVisibility(View.VISIBLE);
+        } else {
+            dynamicNotifications.setVisibility(View.INVISIBLE);
         }
     }
 
