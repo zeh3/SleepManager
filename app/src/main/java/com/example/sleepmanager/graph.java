@@ -33,7 +33,7 @@ public class graph extends AppCompatActivity {
     private String id;
     private void getData() {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference().child(id).child("usersData");
+        DatabaseReference databaseReference = firebaseDatabase.getReference(id).child("UsersData");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {

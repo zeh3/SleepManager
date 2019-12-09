@@ -18,7 +18,6 @@ import java.util.Date;
 import java.util.List;
 
 public class inputpage extends AppCompatActivity{
-
     private String id;
     public void onCreate() {
         initial();
@@ -46,26 +45,26 @@ public class inputpage extends AppCompatActivity{
                     long sleep3 = sleepfinal.getTime();
                     long wakeup3 = wakeupfinal.getTime();
                     long slept = wakeup3 - sleep3;
-                    double hrs_slept = slept/(60*60);
+                    double hrs_slept = (double) slept/(60*60);
                     input(hrs_slept, datewakeup2, sleep2, wakeup2);
                 } catch (Exception q) {
                 }
             }
         });
     }
-    private List<UsersData> usersdata = new ArrayList<>();
+    private List<UsersData> usersdata = new ArrayList<UsersData>();
     private UsersData usersData1 = new UsersData();
     private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("users");
     public void input( double slept, Date today, Date sleep, Date wakeup) {
         // to put the data in the firebase
         usersData1 = new UsersData();
-        DatabaseReference b = databaseReference.child(id).child("usersData");
+        DatabaseReference b = databaseReference.child(id).child("UsersData");
         usersData1.setToday(today);
         usersData1.setWakeup(wakeup);
         usersData1.setSleep(sleep);
         usersData1.setSlept(slept);
         usersdata.add(usersData1);
-        b.push().setValue(usersData1, new DatabaseReference.CompletionListener() {
+        b.push().setValue(usersdata, new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError error, DatabaseReference ref) {
 

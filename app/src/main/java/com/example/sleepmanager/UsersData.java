@@ -14,7 +14,6 @@ public class UsersData {
         wakeup = d;
     }
     UsersData() {
-
     }
     public Date getSleep() {
         return sleep;
