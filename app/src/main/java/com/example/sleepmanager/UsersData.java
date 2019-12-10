@@ -4,10 +4,10 @@ import java.util.Date;
 
 public class UsersData {
     public double slept;
-    public Date today;
-    public Date sleep;
-    public Date wakeup;
-    UsersData(double a, Date b, Date c, Date d) {
+    public String today;
+    public String sleep;
+    public String wakeup;
+    UsersData(double a, String b, String c, String d) {
         slept = a;
         today = b;
         sleep = c;
@@ -15,28 +15,28 @@ public class UsersData {
     }
     UsersData() {
     }
-    public Date getSleep() {
+    public String getSleep() {
         return sleep;
     }
-    public Date getToday() {
+    public String getToday() {
         return today;
     }
     public double getSlept() {
         return slept;
     }
-    public Date getWakeup() {
+    public String getWakeup() {
         return wakeup;
     }
-    public void setSleep(Date slee) {
+    public void setSleep(String slee) {
         this.sleep = slee;
     }
     public void setSlept(double slep) {
         this.slept = slep;
     }
-    public void setToday(Date toda) {
+    public void setToday(String toda) {
         this.today = toda;
     }
-    public void setWakeup(Date wakeu) {
+    public void setWakeup(String wakeu) {
         this.wakeup = wakeu;
     }
 }

@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.mainmenu);
         Intent intent2 = getIntent();
         id = intent2.getStringExtra("user");
-        id = "default";
+        id = "defa";
 
         Button settings = findViewById(R.id.otherSettings);
         settings.setOnClickListener(unused -> {

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +19,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.google.firebase.database.DataSnapshot;
@@ -29,8 +32,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class graph extends AppCompatActivity {
     BarChart b;
-    List<Double> hours = new ArrayList<>();
-    List<Date> today = new ArrayList<Date>();
+    Map<String, Double> data= new HashMap<>();
+    List<String> today = new ArrayList<>();
     private String id;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,38 +43,17 @@ public class graph extends AppCompatActivity {
         getData();
         b = findViewById(R.id.bar);
         ConstraintLayout m = findViewById(R.id.ab);
-        Button n = m.findViewById(R.id.bot);
-        n.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    graph1();
-                }
-                catch(Exception q) {
-                }
-            }
+        Button bot = m.findViewById(R.id.bot);
+        bot.setOnClickListener(unused -> {
+            graph1();
         });
-        Button o = m.findViewById(R.id.mon);
-        o.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    graph2();
-                }
-                catch(Exception q) {
-                }
-            }
+        Button month = m.findViewById(R.id.mon);
+        month.setOnClickListener(unused -> {
+            graph2();
         });
-        Button p = m.findViewById(R.id.week);
-        p.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
+        Button week = m.findViewById(R.id.week);
+        week.setOnClickListener(unused -> {
                     graph3();
-                }
-                catch(Exception q) {
-                }
-            }
         });
     }
     private void getData() {
@@ -81,8 +63,8 @@ public class graph extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()) {
-                    hours.add(dataSnapshot.getValue(UsersData.class).getSlept());
-                    today.add(dataSnapshot.getValue(UsersData.class).getToday());
+                    data.put((dataSnapshot.getValue(UsersData.class).getToday()),(dataSnapshot.getValue(UsersData.class).getSlept()));
+                    today.add((dataSnapshot.getValue(UsersData.class).getToday()));
                 }
             }
             @Override
@@ -90,17 +72,19 @@ public class graph extends AppCompatActivity {
 
             }
         });
+
     }
     void graph1() {
 
         ArrayList<BarEntry> m = new ArrayList<>();
         ArrayList<String> j = new ArrayList<>();
-        for (int i = 0; i < hours.size(); i++) {
+        Toast.makeText(this, "data was pulled properly", Toast.LENGTH_SHORT).show();
+        for (int i = 0; i < today.size(); i++) {
 
             DateFormat dateFormat = new SimpleDateFormat("mm-dd") {
             };
-            String h = dateFormat.format(today.get(i));
-            double g = hours.get(i);
+            String h = today.get(i);
+            double g = data.get(h);
             j.add(h);
             BarEntry n = new BarEntry((float)g, i);
             m.add(n);
@@ -112,12 +96,12 @@ public class graph extends AppCompatActivity {
     void graph2() {
         ArrayList<BarEntry> m = new ArrayList<>();
         ArrayList<String> j = new ArrayList<>();
-        for (int i = hours.size(); i > hours.size()- 30; i--) {
+        for (int i = today.size(); i > today.size()- 30; i--) {
 
             DateFormat dateFormat = new SimpleDateFormat("mm-dd") {
             };
-            String h = dateFormat.format(today.get(i));
-            double g = hours.get(i);
+            String h = today.get(i);
+            double g = data.get(h);
             j.add(h);
             BarEntry n = new BarEntry((float) g, i);
             m.add(n);
@@ -129,12 +113,12 @@ public class graph extends AppCompatActivity {
     void graph3() {
         ArrayList<BarEntry> m = new ArrayList<>();
         ArrayList<String> j = new ArrayList<>();
-        for (int i = hours.size(); i > hours.size()- 7; i--) {
+        for (int i = today.size(); i > today.size()- 7; i--) {
 
             DateFormat dateFormat = new SimpleDateFormat("mm-dd") {
             };
-            String h = dateFormat.format(today.get(i));
-            double g = hours.get(i);
+            String h = today.get(i);
+            double g = data.get(h);
             j.add(h);
             BarEntry n = new BarEntry((float)g, i);
             m.add(n);
