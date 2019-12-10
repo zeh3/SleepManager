@@ -30,6 +30,9 @@
         <activity
             android:name="com.example.sleepmanager.inputpage"
             android:label="inputpage" />
+        <activity
+            android:name="com.example.sleepmanager.graph"
+            android:label="graph" />
         <activity android:name="com.example.sleepmanager.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

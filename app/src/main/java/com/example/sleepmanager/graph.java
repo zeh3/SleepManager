@@ -1,6 +1,7 @@
 
 package com.example.sleepmanager;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
@@ -31,30 +32,13 @@ public class graph extends AppCompatActivity {
     List<Double> hours = new ArrayList<>();
     List<Date> today = new ArrayList<Date>();
     private String id;
-    private void getData() {
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference(id).child("UsersData");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot:snapshot.getChildren()) {
-                    hours.add(dataSnapshot.getValue(UsersData.class).getSlept());
-                    today.add(dataSnapshot.getValue(UsersData.class).getToday());
-                }
-            }
-            @Override
-            public void onCancelled(DatabaseError error) {
-
-            }
-        });
-    }
-    protected void onCreate() {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.graph);
-        DatabaseReference firebaseDatabase = FirebaseDatabase.getInstance().getReference();
         Intent intent = getIntent();
         id = intent.getStringExtra("user");
         getData();
-        b = b.findViewById(R.id.bar);
+        b = findViewById(R.id.bar);
         ConstraintLayout m = findViewById(R.id.ab);
         Button n = m.findViewById(R.id.bot);
         n.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +71,23 @@ public class graph extends AppCompatActivity {
                 }
                 catch(Exception q) {
                 }
+            }
+        });
+    }
+    private void getData() {
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference(id).child("UsersData");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot:snapshot.getChildren()) {
+                    hours.add(dataSnapshot.getValue(UsersData.class).getSlept());
+                    today.add(dataSnapshot.getValue(UsersData.class).getToday());
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError error) {
+
             }
         });
     }

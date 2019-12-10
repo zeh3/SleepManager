@@ -6,108 +6,114 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="27"
-8-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml
+8-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml
+9-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml
 10
 11    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 12    <!-- <uses-sdk android:minSdkVersion="14"/> -->
 13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-13-->[com.google.firebase:firebase-database:19.2.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/9209bec148561620729e9a8f50f40b76/firebase-database-19.2.0/AndroidManifest.xml:25:5-79
-13-->[com.google.firebase:firebase-database:19.2.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/9209bec148561620729e9a8f50f40b76/firebase-database-19.2.0/AndroidManifest.xml:25:22-76
+13-->[com.google.firebase:firebase-database:19.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\463da60977420e86b3b59aa784a805a0\firebase-database-19.2.0\AndroidManifest.xml:25:5-79
+13-->[com.google.firebase:firebase-database:19.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\463da60977420e86b3b59aa784a805a0\firebase-database-19.2.0\AndroidManifest.xml:25:22-76
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->[com.google.firebase:firebase-database:19.2.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/9209bec148561620729e9a8f50f40b76/firebase-database-19.2.0/AndroidManifest.xml:26:5-67
-14-->[com.google.firebase:firebase-database:19.2.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/9209bec148561620729e9a8f50f40b76/firebase-database-19.2.0/AndroidManifest.xml:26:22-64
+14-->[com.google.firebase:firebase-database:19.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\463da60977420e86b3b59aa784a805a0\firebase-database-19.2.0\AndroidManifest.xml:26:5-67
+14-->[com.google.firebase:firebase-database:19.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\463da60977420e86b3b59aa784a805a0\firebase-database-19.2.0\AndroidManifest.xml:26:22-64
 15
 16    <application
-16-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:5:5-27:19
+16-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:5:5-30:19
 17        android:allowBackup="true"
-17-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:6:9-35
+17-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:6:9-35
 18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-18-->[androidx.core:core:1.0.1] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/7af9464903b8a503017df0a97e0258a2/core-1.0.1/AndroidManifest.xml:22:18-86
+18-->[androidx.core:core:1.0.1] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\d856a2ad07d784cae061be131eb0ba9a\core-1.0.1\AndroidManifest.xml:22:18-86
 19        android:debuggable="true"
 20        android:icon="@mipmap/ic_launcher"
-20-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:7:9-43
+20-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:7:9-43
 21        android:label="@string/app_name"
-21-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:8:9-41
+21-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:8:9-41
 22        android:roundIcon="@mipmap/ic_launcher_round"
-22-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:9:9-54
+22-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:9:9-54
 23        android:supportsRtl="true"
-23-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:10:9-35
+23-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:10:9-35
 24        android:testOnly="true"
 25        android:theme="@style/AppTheme" >
-25-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:11:9-40
+25-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:11:9-40
 26        <activity
-26-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:12:9-15:68
+26-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:12:9-15:68
 27            android:name="com.example.sleepmanager.SettingsActivity"
-27-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:13:13-45
+27-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:13:13-45
 28            android:label="@string/title_activity_settings"
-28-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:14:13-60
+28-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:14:13-60
 29            android:theme="@style/AppTheme.NoActionBar" />
-29-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:15:13-56
+29-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:15:13-56
 30        <activity
-30-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:16:9-18:40
+30-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:16:9-18:40
 31            android:name="com.example.sleepmanager.inputpage"
-31-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:17:13-38
+31-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:17:13-38
 32            android:label="inputpage" />
-32-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:18:13-38
-33        <activity android:name="com.example.sleepmanager.MainActivity" >
-33-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:19:9-25:20
-33-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:19:19-47
-34            <intent-filter>
-34-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:20:13-24:29
-35                <action android:name="android.intent.action.MAIN" />
-35-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:21:17-69
-35-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:21:25-66
-36
-37                <category android:name="android.intent.category.LAUNCHER" />
-37-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:23:17-77
-37-->/Users/bhaveshprahladka/AndroidStudioProjects/sleep-manager/app/src/main/AndroidManifest.xml:23:27-74
-38            </intent-filter>
-39        </activity>
-40
-41        <service
-41-->[com.google.firebase:firebase-database:19.2.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/9209bec148561620729e9a8f50f40b76/firebase-database-19.2.0/AndroidManifest.xml:29:9-35:19
-42            android:name="com.google.firebase.components.ComponentDiscoveryService"
-42-->[com.google.firebase:firebase-database:19.2.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/9209bec148561620729e9a8f50f40b76/firebase-database-19.2.0/AndroidManifest.xml:30:13-84
-43            android:directBootAware="true"
-43-->[com.google.firebase:firebase-common:19.2.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/c0b8405c419ae1527bc387c260098990/firebase-common-19.2.0/AndroidManifest.xml:15:13-43
-44            android:exported="false" >
-44-->[com.google.firebase:firebase-database:19.2.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/9209bec148561620729e9a8f50f40b76/firebase-database-19.2.0/AndroidManifest.xml:31:13-37
-45            <meta-data
-45-->[com.google.firebase:firebase-database:19.2.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/9209bec148561620729e9a8f50f40b76/firebase-database-19.2.0/AndroidManifest.xml:32:13-34:85
-46                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-46-->[com.google.firebase:firebase-database:19.2.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/9209bec148561620729e9a8f50f40b76/firebase-database-19.2.0/AndroidManifest.xml:33:17-109
-47                android:value="com.google.firebase.components.ComponentRegistrar" />
-47-->[com.google.firebase:firebase-database:19.2.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/9209bec148561620729e9a8f50f40b76/firebase-database-19.2.0/AndroidManifest.xml:34:17-82
-48        </service>
-49
-50        <activity
-50-->[com.google.android.gms:play-services-base:17.0.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/9aa43e4d859846d255e0c2916968f517/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
-51            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-51-->[com.google.android.gms:play-services-base:17.0.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/9aa43e4d859846d255e0c2916968f517/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
-52            android:exported="false"
-52-->[com.google.android.gms:play-services-base:17.0.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/9aa43e4d859846d255e0c2916968f517/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
-53            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-53-->[com.google.android.gms:play-services-base:17.0.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/9aa43e4d859846d255e0c2916968f517/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
-54
-55        <provider
-55-->[com.google.firebase:firebase-common:19.2.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/c0b8405c419ae1527bc387c260098990/firebase-common-19.2.0/AndroidManifest.xml:19:9-23:39
-56            android:name="com.google.firebase.provider.FirebaseInitProvider"
-56-->[com.google.firebase:firebase-common:19.2.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/c0b8405c419ae1527bc387c260098990/firebase-common-19.2.0/AndroidManifest.xml:20:13-77
-57            android:authorities="com.example.sleepmanager.firebaseinitprovider"
-57-->[com.google.firebase:firebase-common:19.2.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/c0b8405c419ae1527bc387c260098990/firebase-common-19.2.0/AndroidManifest.xml:21:13-72
-58            android:exported="false"
-58-->[com.google.firebase:firebase-common:19.2.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/c0b8405c419ae1527bc387c260098990/firebase-common-19.2.0/AndroidManifest.xml:22:13-37
-59            android:initOrder="100" />
-59-->[com.google.firebase:firebase-common:19.2.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/c0b8405c419ae1527bc387c260098990/firebase-common-19.2.0/AndroidManifest.xml:23:13-36
-60
-61        <meta-data
-61-->[com.google.android.gms:play-services-basement:17.0.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/d420cf50b70ab747cff7bc70b3ca2303/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
-62            android:name="com.google.android.gms.version"
-62-->[com.google.android.gms:play-services-basement:17.0.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/d420cf50b70ab747cff7bc70b3ca2303/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
-63            android:value="@integer/google_play_services_version" />
-63-->[com.google.android.gms:play-services-basement:17.0.0] /Users/bhaveshprahladka/.gradle/caches/transforms-2/files-2.1/d420cf50b70ab747cff7bc70b3ca2303/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
-64    </application>
-65
-66</manifest>
+32-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:18:13-38
+33        <activity
+33-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:19:9-21:36
+34            android:name="com.example.sleepmanager.graph"
+34-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:20:13-34
+35            android:label="graph" />
+35-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:21:13-34
+36        <activity android:name="com.example.sleepmanager.MainActivity" >
+36-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:22:9-28:20
+36-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:22:19-47
+37            <intent-filter>
+37-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:23:13-27:29
+38                <action android:name="android.intent.action.MAIN" />
+38-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:24:17-69
+38-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:24:25-66
+39
+40                <category android:name="android.intent.category.LAUNCHER" />
+40-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:26:17-77
+40-->C:\Users\dhruv\StudioProjects\sleep-manager\app\src\main\AndroidManifest.xml:26:27-74
+41            </intent-filter>
+42        </activity>
+43
+44        <service
+44-->[com.google.firebase:firebase-database:19.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\463da60977420e86b3b59aa784a805a0\firebase-database-19.2.0\AndroidManifest.xml:29:9-35:19
+45            android:name="com.google.firebase.components.ComponentDiscoveryService"
+45-->[com.google.firebase:firebase-database:19.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\463da60977420e86b3b59aa784a805a0\firebase-database-19.2.0\AndroidManifest.xml:30:13-84
+46            android:directBootAware="true"
+46-->[com.google.firebase:firebase-common:19.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\61c47ccf880e44b6c829a8c9a48ba20d\firebase-common-19.2.0\AndroidManifest.xml:15:13-43
+47            android:exported="false" >
+47-->[com.google.firebase:firebase-database:19.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\463da60977420e86b3b59aa784a805a0\firebase-database-19.2.0\AndroidManifest.xml:31:13-37
+48            <meta-data
+48-->[com.google.firebase:firebase-database:19.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\463da60977420e86b3b59aa784a805a0\firebase-database-19.2.0\AndroidManifest.xml:32:13-34:85
+49                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+49-->[com.google.firebase:firebase-database:19.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\463da60977420e86b3b59aa784a805a0\firebase-database-19.2.0\AndroidManifest.xml:33:17-109
+50                android:value="com.google.firebase.components.ComponentRegistrar" />
+50-->[com.google.firebase:firebase-database:19.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\463da60977420e86b3b59aa784a805a0\firebase-database-19.2.0\AndroidManifest.xml:34:17-82
+51        </service>
+52
+53        <activity
+53-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\c423a4a4c865f1495e65a77f87be0907\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+54            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+54-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\c423a4a4c865f1495e65a77f87be0907\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+55            android:exported="false"
+55-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\c423a4a4c865f1495e65a77f87be0907\play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+56            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+56-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\c423a4a4c865f1495e65a77f87be0907\play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+57
+58        <provider
+58-->[com.google.firebase:firebase-common:19.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\61c47ccf880e44b6c829a8c9a48ba20d\firebase-common-19.2.0\AndroidManifest.xml:19:9-23:39
+59            android:name="com.google.firebase.provider.FirebaseInitProvider"
+59-->[com.google.firebase:firebase-common:19.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\61c47ccf880e44b6c829a8c9a48ba20d\firebase-common-19.2.0\AndroidManifest.xml:20:13-77
+60            android:authorities="com.example.sleepmanager.firebaseinitprovider"
+60-->[com.google.firebase:firebase-common:19.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\61c47ccf880e44b6c829a8c9a48ba20d\firebase-common-19.2.0\AndroidManifest.xml:21:13-72
+61            android:exported="false"
+61-->[com.google.firebase:firebase-common:19.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\61c47ccf880e44b6c829a8c9a48ba20d\firebase-common-19.2.0\AndroidManifest.xml:22:13-37
+62            android:initOrder="100" />
+62-->[com.google.firebase:firebase-common:19.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\61c47ccf880e44b6c829a8c9a48ba20d\firebase-common-19.2.0\AndroidManifest.xml:23:13-36
+63
+64        <meta-data
+64-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\380574decb727c3eb8ec17c7df9dbeac\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+65            android:name="com.google.android.gms.version"
+65-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\380574decb727c3eb8ec17c7df9dbeac\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+66            android:value="@integer/google_play_services_version" />
+66-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\380574decb727c3eb8ec17c7df9dbeac\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+67    </application>
+68
+69</manifest>

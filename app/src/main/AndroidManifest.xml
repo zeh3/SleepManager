@@ -16,6 +16,9 @@
         <activity
             android:name=".inputpage"
             android:label="inputpage"/>
+        <activity
+            android:name=".graph"
+            android:label="graph"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
