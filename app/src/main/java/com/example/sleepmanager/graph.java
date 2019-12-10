@@ -57,7 +57,6 @@ public class graph extends AppCompatActivity {
                     graph3();
         });
     }
-    Button back1 = findViewById(R.id.backbutton1);
 
     private void getData() {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
