@@ -7,15 +7,24 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
+    <Button
+        android:id="@+id/backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:text="BACK"
+        app:layout_constraintBottom_toBottomOf="parent"></Button>
+
     <EditText
         android:id="@+id/sleep"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="time"
         android:hint="Time you went to sleep"
+        android:inputType="time"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/date1"
@@ -36,8 +45,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="time"
         android:hint="Time you got up"
+        android:inputType="time"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sleep" />
 
@@ -47,8 +56,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:ems="10"
-        android:inputType="date"
         android:hint="Date"
+        android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/wakeup"
         app:layout_constraintTop_toBottomOf="@+id/date1" />

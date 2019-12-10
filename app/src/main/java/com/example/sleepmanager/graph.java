@@ -34,6 +34,7 @@ public class graph extends AppCompatActivity {
     BarChart b;
     Map<String, Double> data= new HashMap<>();
     List<String> today = new ArrayList<>();
+
     private String id;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +57,8 @@ public class graph extends AppCompatActivity {
                     graph3();
         });
     }
+    Button back1 = findViewById(R.id.backbutton1);
+
     private void getData() {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference databaseReference = firebaseDatabase.getReference(id).child("UsersData");

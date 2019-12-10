@@ -25,6 +25,9 @@ public class inputpage extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inputpage);
 
+        Button back = findViewById(R.id.backbutton);
+        Intent intent1 = new Intent(this, MainActivity.class);
+        back.setOnClickListener(unused -> startActivity(intent1));
         Intent intent = getIntent();
         id = intent.getStringExtra("user");
         Button saveData = findViewById(R.id.saveData);
