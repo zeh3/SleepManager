@@ -1,12 +1,3 @@
-package com.example.sleepmanager;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -40,7 +31,7 @@ public class SignInActivity extends AppCompatActivity {
         //try sign in if the button is clicked
         signInButton.setOnClickListener(this::onClick);
         //test
-        Users user = new Users();
+        User user = new User();
         String email = "test0@gmail.com";
         DatabaseReference tDatabase = FirebaseDatabase.getInstance().getReference().child("users");
 
@@ -102,7 +93,7 @@ public class SignInActivity extends AppCompatActivity {
     private void writeNewUser(final GoogleSignInAccount account) {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         String email = account.getEmail();
-        Users user = new Users();
+        User user = new User();
         mDatabase.child("users").child(email).setValue(user);
         mDatabase.push();
     }
