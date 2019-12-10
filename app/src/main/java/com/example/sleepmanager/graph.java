@@ -78,11 +78,8 @@ public class graph extends AppCompatActivity {
 
         ArrayList<BarEntry> m = new ArrayList<>();
         ArrayList<String> j = new ArrayList<>();
-        Toast.makeText(this, "data was pulled properly", Toast.LENGTH_SHORT).show();
         for (int i = 0; i < today.size(); i++) {
-
-            DateFormat dateFormat = new SimpleDateFormat("mm-dd") {
-            };
+            DateFormat dateFormat = new SimpleDateFormat("mm-dd") {};
             String h = today.get(i);
             double g = data.get(h);
             j.add(h);
