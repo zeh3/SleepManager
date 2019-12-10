@@ -1,6 +1,7 @@
 package com.example.sleepmanager;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,11 +20,11 @@ import java.util.List;
 
 public class inputpage extends AppCompatActivity{
     private String id;
-    public void onCreate() {
-        initial();
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.inputpage);
         Intent intent = getIntent();
         id = intent.getStringExtra("user");
-        setContentView(R.layout.inputpage);
         Button saveData = findViewById(R.id.saveData);
         saveData.setOnClickListener(new View.OnClickListener() {
             @Override

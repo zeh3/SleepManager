@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="time"
-        android:text="Time you went to sleep"
+        android:hint="Time you went to sleep"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <EditText
@@ -36,7 +36,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="time"
-        android:text="Time you got up"
+        android:hint="Time you got up"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sleep" />
 

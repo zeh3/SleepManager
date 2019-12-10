@@ -7,28 +7,35 @@ import android.os.Bundle;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+    private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Test
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainmenu);
+        Intent intent2 = getIntent();
+        id = intent2.getStringExtra("user");
+        id = "dhruvr4";
 
         Button settings = findViewById(R.id.otherSettings);
         settings.setOnClickListener(unused -> {
             Intent intent = new Intent(this, SettingsActivity.class);
+            intent.putExtra("user", id);
+            startActivity(intent);
+        });
+        Button inputpage = findViewById(R.id.inputpage);
+        inputpage.setOnClickListener(unused -> {
+            Intent intent = new Intent(this, inputpage.class);
+            intent.putExtra("user", id);
             startActivity(intent);
         });
 
-        Button startSleeping = findViewById(R.id.startTiming);
-        startSleeping.setOnClickListener(unused -> {
-            Intent intent = new Intent(this, StartTiming.class);
-            startActivity(intent);
-        });
 
         Button graph = findViewById(R.id.graph);
         graph.setOnClickListener(unused -> {
             Intent intent = new Intent(this, graph.class);
+            intent.putExtra("user", id);
             startActivity(intent);
         });
     }
