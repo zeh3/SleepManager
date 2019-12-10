@@ -11,34 +11,24 @@
         android:text="Sleep Manager"
         android:textSize="75dp"/>
 
-    <Button
-        android:id="@+id/startTiming"
-        android:layout_width="250dp"
-        android:layout_height="100dp"
-        android:text="Start Sleeping"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="20dp"
-        android:textSize="30dp"
-        />
 
     <Button
-        android:id="@+id/timeSetting"
+        android:id="@+id/inputpage"
         android:layout_width="250dp"
         android:layout_height="80dp"
-        android:text="Time Setting"
+        android:text="Input Page"
         android:layout_marginLeft="80dp"
         android:textSize="30dp"
         />
 
     <Button
-        android:id="@+id/statistics"
+        android:id="@+id/graph"
         android:layout_width="250dp"
-        android:layout_height="100dp"
-        android:text="Sleeping Statistics"
+        android:layout_height="80dp"
+        android:text="Graph"
         android:layout_marginLeft="80dp"
         android:textSize="30dp"
         />
-
     <Button
         android:id="@+id/otherSettings"
         android:layout_width="250dp"
@@ -48,13 +38,5 @@
         android:textSize="30dp"
         />
 
-    <Button
-        android:id="@+id/graph"
-        android:layout_width="250dp"
-        android:layout_height="80dp"
-        android:text="Statistics"
-        android:layout_marginLeft="80dp"
-        android:textSize="30dp"
-        />
 
 </LinearLayout>

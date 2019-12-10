@@ -1,117 +1,129 @@
+
 package com.example.sleepmanager;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import java.util.ArrayList;
-import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 
-public class graph extends MainActivity {
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+public class graph extends AppCompatActivity {
     BarChart b;
-    protected void onCreate(final JsonObject c) {
+    Map<String, Double> data= new HashMap<>();
+    List<String> today = new ArrayList<>();
+
+    private String id;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.graph);
-        b = b.findViewById(R.id.bar);
+        Intent intent = getIntent();
+        id = intent.getStringExtra("user");
+        getData();
+        b = findViewById(R.id.bar);
         ConstraintLayout m = findViewById(R.id.ab);
-        Button n = m.findViewById(R.id.bot);
-        n.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    graph1(c);
-                }
-                catch(Exception q) {
-                }
-            }
+        Button bot = m.findViewById(R.id.bot);
+        bot.setOnClickListener(unused -> {
+            graph1();
         });
-        Button o = m.findViewById(R.id.mon);
-        o.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    graph2(c);
-                }
-                catch(Exception q) {
-                }
-            }
+        Button month = m.findViewById(R.id.mon);
+        month.setOnClickListener(unused -> {
+            graph2();
         });
-        Button p = m.findViewById(R.id.week);
-        p.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    graph3(c);
-                }
-                catch(Exception q) {
-                }
-            }
+        Button week = m.findViewById(R.id.week);
+        week.setOnClickListener(unused -> {
+                    graph3();
         });
     }
-    void graph1(JsonObject c) {
-        JsonArray d = c.getAsJsonArray("info");
-        ArrayList<BarEntry> i = new ArrayList<>();
+
+    private void getData() {
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference(id).child("UsersData");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot:snapshot.getChildren()) {
+                    data.put((dataSnapshot.getValue(UsersData.class).getToday()),(dataSnapshot.getValue(UsersData.class).getSlept()));
+                    today.add((dataSnapshot.getValue(UsersData.class).getToday()));
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError error) {
+
+            }
+        });
+
+    }
+    void graph1() {
+
+        ArrayList<BarEntry> m = new ArrayList<>();
         ArrayList<String> j = new ArrayList<>();
-        for (JsonElement e : d) {
-            JsonObject f = e.getAsJsonObject();
-            String g = f.get("date").getAsString();
-            float h = f.get("time").getAsFloat();
-            i.add(new BarEntry(h, Float.parseFloat(g)));
-            j.add(g);
+        for (int i = 0; i < today.size(); i++) {
+            DateFormat dateFormat = new SimpleDateFormat("mm-dd") {};
+            String h = today.get(i);
+            double g = data.get(h);
+            j.add(h);
+            BarEntry n = new BarEntry((float)g, i);
+            m.add(n);
         }
-        BarDataSet l =new BarDataSet(i,"Dates");
+        BarDataSet l =new BarDataSet(m,"Dates");
+        BarData k = new BarData((IBarDataSet)j, l);
+        b.setData(k);
+    }
+    void graph2() {
+        ArrayList<BarEntry> m = new ArrayList<>();
+        ArrayList<String> j = new ArrayList<>();
+        for (int i = today.size(); i > today.size()- 30; i--) {
+
+            DateFormat dateFormat = new SimpleDateFormat("mm-dd") {
+            };
+            String h = today.get(i);
+            double g = data.get(h);
+            j.add(h);
+            BarEntry n = new BarEntry((float) g, i);
+            m.add(n);
+        }
+        BarDataSet l = new BarDataSet(m, "Dates");
         BarData k = new BarData((IBarDataSet) j, l);
         b.setData(k);
     }
-    void graph2(JsonObject c) {
-        JsonArray d = c.getAsJsonArray("info");
-        ArrayList<BarEntry> i = new ArrayList<>();
+    void graph3() {
+        ArrayList<BarEntry> m = new ArrayList<>();
         ArrayList<String> j = new ArrayList<>();
-        int count = 0;
-        for (int x = d.size(); x > 0; x --) {
-            JsonElement e = d.get(x);
-            JsonObject f = e.getAsJsonObject();
-            String g = f.get("date").getAsString();
-            float h = f.get("time").getAsFloat();
-            i.add(new BarEntry(h, Float.parseFloat(g)));
-            j.add(g);
-            count++;
-            if (count > 30 ) {
-                break;
-            }
+        for (int i = today.size(); i > today.size()- 7; i--) {
+
+            DateFormat dateFormat = new SimpleDateFormat("mm-dd") {
+            };
+            String h = today.get(i);
+            double g = data.get(h);
+            j.add(h);
+            BarEntry n = new BarEntry((float)g, i);
+            m.add(n);
         }
-        BarDataSet l =new BarDataSet(i,"Dates");
-        BarData k = new BarData((IBarDataSet) j,l);
+        BarDataSet l =new BarDataSet(m,"Dates");
+        BarData k = new BarData((IBarDataSet)j, l);
         b.setData(k);
-    }
-    void graph3(JsonObject c) {
-        JsonArray d = c.getAsJsonArray("info");
-        ArrayList<BarEntry> i = new ArrayList<>();
-        ArrayList<String> j = new ArrayList<>();
-        int count = 0;
-        for (int x = d.size(); x > 0; x --) {
-            JsonElement e = d.get(x);
-            JsonObject f = e.getAsJsonObject();
-            String g = f.get("date").getAsString();
-            float h = f.get("time").getAsFloat();
-            i.add(new BarEntry(h, Float.parseFloat(g)));
-            j.add(g);
-            count++;
-            if (count > 6 ) {
-                break;
-            }
-        }
-        BarDataSet l =new BarDataSet(i,"Dates");
-        BarData k = new BarData((IBarDataSet) j,l);
-        b.setData(k);
-    }
-    protected void main(JsonObject a) {
-        onCreate(a);
     }
 }
