@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
     private String id;
 
@@ -14,9 +16,7 @@ public class MainActivity extends AppCompatActivity {
         //Test
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainmenu);
-        Intent intent2 = getIntent();
-        id = intent2.getStringExtra("user");
-        id = "defa";
+        id = FirebaseAuth.getInstance().getUid();
 
         Button settings = findViewById(R.id.otherSettings);
         settings.setOnClickListener(unused -> {
