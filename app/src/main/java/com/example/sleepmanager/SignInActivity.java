@@ -1,3 +1,12 @@
+package com.example.sleepmanager;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -12,6 +21,7 @@ public class SignInActivity extends AppCompatActivity {
     private static final String TAG = "SignInActivity";
     protected GoogleSignInClient mGoogleSignInClient;
     private DatabaseReference mDatabase;
+    private SignInButton signInButton;
 
 
     @Override
@@ -25,17 +35,17 @@ public class SignInActivity extends AppCompatActivity {
                 .requestEmail().build();
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-        SignInButton signInButton = findViewById(R.id.sign_in_button);
+        signInButton = findViewById(R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
         signInButton.setVisibility(View.VISIBLE);
         //try sign in if the button is clicked
         signInButton.setOnClickListener(this::onClick);
         //test
-        User user = new User();
-        String email = "test0@gmail.com";
-        DatabaseReference tDatabase = FirebaseDatabase.getInstance().getReference().child("users");
-
-        tDatabase.push();
+//        User user = new User();
+//        String email = "test0@gmail.com";
+//        DatabaseReference tDatabase = FirebaseDatabase.getInstance().getReference().child("users");
+//
+//        tDatabase.push();
     }
     @Override
     protected void onStart() {
@@ -43,7 +53,10 @@ public class SignInActivity extends AppCompatActivity {
         // Check for existing Google Sign In account, if the user is already signed in
         // the GoogleSignInAccount will be non-null.
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        signedIn(account);
+        if (account != null) {
+            signedIn(account);
+        }
+
     }
 
     public void onClick(View v) {
@@ -75,12 +88,12 @@ public class SignInActivity extends AppCompatActivity {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             // Signed in successfully, show authenticated UI.
             signedIn(account);
-            writeNewUser(account);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
             //return to initial page if sign in failed
+            signedIn(null);
         }
     }
     protected void signedIn(final GoogleSignInAccount account) {
@@ -92,7 +105,7 @@ public class SignInActivity extends AppCompatActivity {
     }
     private void writeNewUser(final GoogleSignInAccount account) {
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        String email = account.getEmail();
+        String email = "test0@gmail.com";
         User user = new User();
         mDatabase.child("users").child(email).setValue(user);
         mDatabase.push();
