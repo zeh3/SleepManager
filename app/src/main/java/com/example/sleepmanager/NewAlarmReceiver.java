@@ -2,12 +2,10 @@ package com.example.sleepmanager;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
@@ -20,35 +18,28 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-
-public class AlarmReceiver extends BroadcastReceiver {
-
+public class NewAlarmReceiver extends BroadcastReceiver {
     private String id;
     Settings settings;
-
 
     @Override
     public void onReceive(Context context, Intent intent) {
         id = FirebaseAuth.getInstance().getUid();
         getSettings();
-        if (!settings.getPutInDataNotifications()) {
+        if (!settings.getGoToBedNotifications()) {
             return;
         }
-        createNotificationChannel(context);
 
-        Intent newIntent = new Intent(context, MainActivity.class);
-        newIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, newIntent, 0);
+        createNotificationChannel(context);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, NotificationChannel.DEFAULT_CHANNEL_ID)
                 .setSmallIcon(R.drawable.notification_icon)
                 .setContentTitle("Put in today's data!")
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .setContentIntent(pendingIntent);
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
 
-        notificationManager.notify(0, builder.build());
-
+        notificationManager.notify(1, builder.build());
 
     }
 
@@ -72,16 +63,14 @@ public class AlarmReceiver extends BroadcastReceiver {
         };
 
         justSettings.addValueEventListener(settingsListener);
-
-
     }
 
     private void createNotificationChannel(Context context){
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = "putInData";
-            String description = "for putting in data reminders";
+            CharSequence name = "goToBed";
+            String description = "for reminders to go to bed";
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel(NotificationChannel.DEFAULT_CHANNEL_ID, name, importance);
             channel.setDescription(description);
