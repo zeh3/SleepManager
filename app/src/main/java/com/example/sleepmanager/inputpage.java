@@ -20,7 +20,7 @@ import java.util.Date;
 import java.util.List;
 
 public class inputpage extends AppCompatActivity{
-    private String id="";
+    private String id = "";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inputpage);

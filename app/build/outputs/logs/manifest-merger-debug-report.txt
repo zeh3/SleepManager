@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-33:12
+ADDED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-35:12
 MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/a3d8adb3483d79504065435b8aa683aa/MPAndroidChart-v3.1.0/AndroidManifest.xml:2:1-20:12
 MERGED from [com.google.firebase:firebase-firestore:21.3.1] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/a60c57494de07e81ba37a8e60a85bcae/jetified-firebase-firestore-21.3.1/AndroidManifest.xml:2:1-26:12
 MERGED from [io.grpc:grpc-android:1.21.0] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/e784f8a678ea44afdc5d8546de0f1e45/grpc-android-1.21.0/AndroidManifest.xml:2:1-13:12
@@ -71,25 +71,25 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/susanzeh/.
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/5e0444443ffb82f923834973bbf621d3/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/7189998640d03cd8247a01f86409460d/firebase-database-collection-17.0.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:protolite-well-known-types:17.0.0] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/dacab2ed7474744f5d85ca77b44b418e/protolite-well-known-types-17.0.0/AndroidManifest.xml:2:1-11:12
-INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-35:12
 	package
 		ADDED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:3:5-39
 		INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml
-		ADDED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-33:12
+		ADDED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-35:12
 		INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml
-		ADDED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-33:12
+		ADDED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:1-35:12
 		INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:5:5-31:19
+ADDED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:5:5-33:19
 MERGED from [com.google.firebase:firebase-firestore:21.3.1] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/a60c57494de07e81ba37a8e60a85bcae/jetified-firebase-firestore-21.3.1/AndroidManifest.xml:16:5-24:19
 MERGED from [com.google.firebase:firebase-firestore:21.3.1] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/a60c57494de07e81ba37a8e60a85bcae/jetified-firebase-firestore-21.3.1/AndroidManifest.xml:16:5-24:19
 MERGED from [com.firebaseui:firebase-ui-auth:4.3.1] /Users/susanzeh/.gradle/caches/transforms-2/files-2.1/e386a8b6c1709e404af61d04cd7a697a/jetified-firebase-ui-auth-4.3.1/AndroidManifest.xml:15:5-107:19
@@ -196,6 +196,10 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:27:17-77
 	android:name
 		ADDED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:27:27-74
+receiver#com.example.sleepmanager.AlarmReceiver
+ADDED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:31:9-51
+	android:name
+		ADDED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml:31:19-48
 uses-sdk
 INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/susanzeh/Projects/sleep-manager-a/app/src/main/AndroidManifest.xml
