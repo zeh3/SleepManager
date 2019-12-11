@@ -83,7 +83,7 @@ public class SettingsActivity extends AppCompatActivity {
         user = "default";
 
 
-
+        darkMode.setVisibility(View.INVISIBLE);
 
 
         //darkMode.setTextOff("Off");
