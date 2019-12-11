@@ -7,16 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".graph">
 
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/bar"
+    <ImageView
+        android:id="@+id/beginning"
         android:layout_width="410dp"
-        android:layout_height="520dp"
-
+        android:layout_height="500dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </com.github.mikephil.charting.charts.BarChart>
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+    <ImageView
+        android:id="@+id/month"
+        android:layout_width="410dp"
+        android:layout_height="500dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+    <ImageView
+        android:id="@+id/week"
+        android:layout_width="410dp"
+        android:layout_height="500dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
 
     <Button
         android:id="@+id/bot"
@@ -24,9 +35,9 @@
         android:layout_height="wrap_content"
         android:text="From beginning of time"
         app:layout_constraintEnd_toStartOf="@+id/mon"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bar" />
+        app:layout_constraintTop_toBottomOf="@+id/beginning" />
 
     <Button
         android:id="@+id/mon"
@@ -34,16 +45,17 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="This month"
-        app:layout_constraintEnd_toStartOf="@+id/week"
-        app:layout_constraintTop_toBottomOf="@+id/bar" />
+        app:layout_constraintEnd_toStartOf="@+id/wee"
+        app:layout_constraintTop_toBottomOf="@+id/beginning" />
 
     <Button
-        android:id="@+id/week"
+        android:id="@+id/wee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="This week"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bar" />
+        app:layout_constraintTop_toBottomOf="@+id/beginning" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

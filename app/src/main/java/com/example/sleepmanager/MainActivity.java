@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private String id;
     private Settings appSettings;
     int adjustMillis;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainmenu);
         id = FirebaseAuth.getInstance().getUid();
+        context = this;
         getSettings();
+
 
         Button settings = findViewById(R.id.otherSettings);
         settings.setOnClickListener(unused -> {
@@ -53,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        Intent alarmIntent = new Intent (this, AlarmReceiver.class);
+        /*Intent alarmIntent = new Intent (this, AlarmReceiver.class);
         PendingIntent pendingIntent= PendingIntent.getBroadcast(this, 0, alarmIntent, 0);
         AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
@@ -77,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         calendar.set(Calendar.SECOND, 0);
 
         newManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-                AlarmManager.INTERVAL_DAY - adjustMillis, otherPendingIntent);
+                AlarmManager.INTERVAL_DAY - adjustMillis, otherPendingIntent);*/
 
 
 
@@ -94,11 +97,39 @@ public class MainActivity extends AppCompatActivity {
                     appSettings = new Settings();
                     justSettings.setValue(appSettings);
                 }
+
+
+
+                Intent alarmIntent = new Intent (context, AlarmReceiver.class);
+                PendingIntent pendingIntent= PendingIntent.getBroadcast(context, 0, alarmIntent, 0);
+                AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTimeInMillis(System.currentTimeMillis());
+
+                manager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+
+
+                adjustMillis = 0;
+                if (appSettings.getDynamicNotifications()) {
+                    adjustMillis = 1000 * 60 * appSettings.getMinutesEarlier();
+                }
+
+                Intent otherAlarmIntent = new Intent(context, NewAlarmReceiver.class);
+                PendingIntent otherPendingIntent = PendingIntent.getBroadcast(context, 0, otherAlarmIntent, 0);
+                AlarmManager newManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+                calendar.set(Calendar.HOUR_OF_DAY, 2);
+                calendar.set(Calendar.MINUTE, 0);
+                calendar.set(Calendar.SECOND, 0);
+
+                newManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+                        AlarmManager.INTERVAL_DAY - adjustMillis, otherPendingIntent);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                appSettings = new Settings();
             }
         };
 
